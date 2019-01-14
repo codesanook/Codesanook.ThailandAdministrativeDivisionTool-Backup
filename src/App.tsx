@@ -2,20 +2,21 @@ import * as React from "react";
 import AdministrativeDivision from "./AdministrativeDivision";
 import DatabaseType from "./DatabaseType";
 import SqlExport from "./SqlExport";
+import "./App.css"
 
 const App: React.FunctionComponent = () => {
     return (
-        <div className="container-fluid">
-            <div className="row">
-                <div className="col-12">
-                    <h5> Thailand administrative division export tool </h5>
-                </div>
+        <div id="main">
+            <div className="head">
+                Thailand Administrative Division Export Tool
             </div>
-            <DatabaseType />
-            <AdministrativeDivision title={'province'} />
-            <AdministrativeDivision title={'district'} />
-            <AdministrativeDivision title={'subdistrict'} />
-            <SqlExport />
+            <div className="body">
+                <DatabaseType />
+                <AdministrativeDivision title={'Province'} />
+                <AdministrativeDivision title={'District'} />
+                <AdministrativeDivision title={'Subdistrict'} />
+                <SqlExport />
+            </div>
         </div>
     )
 };

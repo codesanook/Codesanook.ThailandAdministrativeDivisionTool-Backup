@@ -8,33 +8,21 @@ interface IProps {
 const AdministrativeDivision: React.FunctionComponent<IProps> = (props: IProps) => {
     return (
         <div className="division">
-            <h3>{props.title}</h3>
-            <div className="row">
-                <div className="col-3">
+            <h5>{props.title}</h5>
+            <ul>
+                <li>
                     <input type="checkbox" checked={true} />
-                </div>
-                <div className="col-9">
-                    <textarea className="editor">
-                        {'create table ' + props.title}
-                    </textarea>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-3">
+                    <textarea className="editor" placeholder={'create table ' + props.title}></textarea>
+                </li>
+                <li>
                     <input type="checkbox" checked={true} />
-                </div>
-                <div className="col-9">
-                    <textarea className="editor">
-                        {'insert into ' + props.title}
-                    </textarea>
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col-12">
+                    <textarea className="editor" placeholder={'insert into ' + props.title}></textarea>
+                </li>
+                <li>
                     Available column name
-                </div>
-            </div>
+                </li>
+            </ul>
+            
         </div>
     )
 };

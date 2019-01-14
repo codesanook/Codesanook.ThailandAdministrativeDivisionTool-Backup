@@ -1,7 +1,22 @@
 .division {
-    margin: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #ddd;
 }
-
-.editor {
-    width: 100%;
+.division ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.division ul  li {
+    margin-top: 15px;
+}
+.division ul  li .editor {
+    width: calc(100% - 55px);
+    padding: 10px;
+    margin-left: 10px;
+    border: solid 2px #ddd;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 255, 0.9);
+    vertical-align: top;
 }

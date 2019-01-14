@@ -1,0 +1,13 @@
+.btn-export {
+    padding: 7px 20px;
+    border: solid 2px #6f320e;
+    border-radius: 4px;
+    background-color: #7f401a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+}
+
+.btn-export:hover {
+    background-color: #6f320e;
+}

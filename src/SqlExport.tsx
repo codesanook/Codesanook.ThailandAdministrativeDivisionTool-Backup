@@ -3,10 +3,8 @@ import "./SqlExport.css"
 
 const SqlExport: React.FunctionComponent = () => {
     return (
-        <div className="row">
-            <div className="col-12 text-center">
-                <button>Export</button>
-            </div>
+        <div className="text-right">
+            <button type="button" className="btn-export">Export</button>
         </div>
     );
 }

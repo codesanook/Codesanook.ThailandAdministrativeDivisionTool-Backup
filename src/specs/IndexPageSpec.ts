@@ -1,7 +1,7 @@
 import Session from '../CodeSanook.Bumblebee.TS/src/Setup/Session';
-import HomePage from '../page-objects/IndexPage';
+import IndexPage from '../page-objects/IndexPage';
 
-describe('home page', () => {
+describe('index page', () => {
     let session: Session;
 
     beforeAll((done) => {
@@ -17,11 +17,12 @@ describe('home page', () => {
         await session.close();
     });
 
-    it('should redirect to home page', async () => {
-        await session.navigateTo(
-            HomePage,
+    it('should go to index page', async () => {
+        const indexPage = await session.navigateTo(
+            IndexPage,
             'http://localhost:3000'
         );
+
         await session.page.waitFor(3000);
     });
 });

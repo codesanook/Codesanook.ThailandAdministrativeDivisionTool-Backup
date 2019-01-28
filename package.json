@@ -1,5 +1,5 @@
 {
-  "name": "thailand-administrative-division-province-district-subdistrict-export-tool",
+  "name": "CodeSanook.ThailandAdministrativeDivisionTool",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,9 +10,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "./node_modules/.bin/jest"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -24,13 +22,37 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/lodash": "^4.14.118",
+    "@types/moment": "^2.13.0",
+    "@types/moment-timezone": "^0.5.9",
+    "@types/node": "10.12.18",
+    "@types/puppeteer": "^1.11.2",
+    "@types/react": "16.7.18",
+    "@types/react-dom": "16.0.11",
+    "jest": "^23.6.0",
+    "jest-puppeteer": "^3.9.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.23",
+    "path": "^0.12.7",
+    "puppeteer": "^1.11.0",
+    "ts-jest": "^23.10.5",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.17.0",
     "tslint-react": "^3.6.0",
-    "@types/jest": "23.3.12",
-    "@types/node": "10.12.18",
-    "@types/react": "16.7.18",
-    "@types/react-dom": "16.0.11",
     "typescript": "3.2.2"
+  },
+  "jest": {
+    "preset": "jest-puppeteer",
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/specs/.*)\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
   }
 }

@@ -4,7 +4,8 @@
     "ordered-imports": false,
     "object-literal-sort-keys": false,
     "no-debugger": false,
-    "no-console": false
+    "no-console": false,
+    "prefer-for-of":false
   },
   "linterOptions": {
     "exclude": [

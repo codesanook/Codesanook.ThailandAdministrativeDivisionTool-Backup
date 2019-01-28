@@ -1,11 +1,11 @@
-﻿import * as puppeteer from "puppeteer"
+﻿import { launch } from "puppeteer"
 import { Page, Browser } from "puppeteer"
 import IBlock from "../Interfaces/IBlock";
 
 export default class Session {
 
 	public static async new(): Promise<Session> {
-		const browser = await puppeteer.launch({
+		const browser = await launch({
 			headless: false,
 			defaultViewport:
 			{

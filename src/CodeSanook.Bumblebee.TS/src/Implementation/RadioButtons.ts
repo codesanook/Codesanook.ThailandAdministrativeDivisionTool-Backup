@@ -6,31 +6,33 @@ import IBlock from "../Interfaces/IBlock";
 
 export default class RadioButtons implements IRadioButtons {
 
-	constructor(public parent: IBlock, public selector: string | ElementHandle<Element>[]) {
+	private tagElement: Array<ElementHandle<Element>>;
+	constructor(public parent: IBlock, public selector: string | Array<ElementHandle<Element>>) {
 	}
 
-	_tags: ElementHandle<Element>[];
-	get tags(): Promise<ElementHandle<Element>[]> {
+	get tags(): Promise<Array<ElementHandle<Element>>> {
 		return (async () => {
-			if (this._tags != null) return Promise.resolve(this._tags);
+			if (this.tagElement != null){
+			 return Promise.resolve(this.tagElement);
+			}
 
 			if (typeof (this.selector) === 'string' || this.selector instanceof String) {
-				this._tags = await this.parent.findElements(<string>this.selector);
+				this.tagElement = await this.parent.findElements(this.selector as string);
 			} else {
-				this._tags = <ElementHandle<Element>[]>this.selector;
+				this.tagElement = this.selector as Array<ElementHandle<Element>>;
 			}
-			return Promise.resolve(this._tags);
+			return Promise.resolve(this.tagElement);
 		})();
 	}
 
 	get options(): Promise<IOption[]> {
 		return (async () => {
-			let radioButtons: RadioButton[] = [];
-			let tags = await this.tags;
+			const radioButtons: RadioButton[] = [];
+			const tags = await this.tags;
 
 			for (let index = 0; index < tags.length; index++) {
 				await this.parent.session.page.waitFor(250);
-				let item = new RadioButton(this.parent, tags[index]);
+				const item = new RadioButton(this.parent, tags[index]);
 				radioButtons.push(item);
 			}
 			return Promise.resolve(radioButtons);

@@ -4,8 +4,9 @@ import Element from "./Element"
 
 export default class Option extends Element implements IOption {
 
-	async click<TResult extends IBlock>(resultType: new (...args: any[]) => TResult): Promise<TResult> {
-		//await this.parent.tag.click();
+	public async click<TResult extends IBlock>(
+		resultType: new (...args: any[]) => TResult
+	): Promise<TResult> {
 		await (await this.tag).click();
 		return this.session.currentBlock(resultType);
 	}

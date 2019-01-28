@@ -7,10 +7,10 @@ export default class SelectBox extends Block implements ISelectBox {
 
 	get options(): Promise<IOption[]> {
 		return (async () => {
-			let tags = await this.findElements("option")
-			let options: IOption[] = [];
+			const tags = await this.findElements("option")
+			const options: IOption[] = [];
 			for (let index = 0; index < tags.length; index++) {
-				let item = new Option(this, tags[index]);
+				const item = new Option(this, tags[index]);
 				options.push(item);
 			}
 			return Promise.resolve(options);

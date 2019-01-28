@@ -5,38 +5,41 @@ import Session from "../Setup/Session";
 
 export default abstract class Element implements IElement {
 
+	private tagElement: ElementHandle;
+
 	constructor(public parent: IBlock, public selector: string | ElementHandle) {
 	}
 
-	_tag: ElementHandle;
-	get tag(): Promise<ElementHandle> {
+	public get tag(): Promise<ElementHandle> {
 		return (async () => {
-			if (this._tag != null) return Promise.resolve(this._tag);
+			if (this.tagElement != null) {
+				return Promise.resolve(this.tagElement);
+			}
 
 			if (typeof (this.selector) === 'string' || this.selector instanceof String) {
-				this._tag = await this.parent.findElement(<string>this.selector);
+				this.tagElement = await this.parent.findElement(this.selector as string);
 			} else {
-				this._tag = <ElementHandle>this.selector;
+				this.tagElement = this.selector as ElementHandle;
 			}
-			return Promise.resolve(this._tag);
+			return Promise.resolve(this.tagElement);
 		})();
 	}
 
-	get session(): Session {
+	public get session(): Session {
 		return this.parent.session;
 	}
 
-	get selected(): Promise<boolean> {
+	public get selected(): Promise<boolean> {
 		return (async () => {
-			let valueHandler = await (await this.tag).getProperty("selected");
-			let selectedValue: string = await valueHandler.jsonValue();
+			const valueHandler = await (await this.tag).getProperty("selected");
+			 const selectedValue: string = await valueHandler.jsonValue();
 			return selectedValue.toLowerCase() === 'selected';
 		})();
 	}
 
-	get text(): Promise<string> {
+	public get text(): Promise<string> {
 		return (async () => {
-			let valueHandler = await (await this.tag).getProperty("value");
+			const valueHandler = await (await this.tag).getProperty("value");
 			return await valueHandler.jsonValue();
 		})();
 	}

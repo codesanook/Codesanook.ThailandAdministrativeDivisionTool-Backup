@@ -12,9 +12,9 @@ const App: React.FunctionComponent = () => {
             </div>
             <div className="body">
                 <DatabaseType />
-                <AdministrativeDivision title={'Province'} />
-                <AdministrativeDivision title={'District'} />
-                <AdministrativeDivision title={'Subdistrict'} />
+                <AdministrativeDivision title={'Province'} additionalClassNames={['province']} />
+                <AdministrativeDivision title={'District'} additionalClassNames={['district']} />
+                <AdministrativeDivision title={'Subdistrict'} additionalClassNames={['subdistrict']} />
                 <SqlExport />
             </div>
         </div>

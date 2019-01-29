@@ -9,7 +9,7 @@ const SqlExport: FunctionComponent = () => {
     }
 
     return (
-        <div className="text-right">
+        <div className="text-right sql-export">
             <button type="button" className="btn-export" onClick={handleExport}>
                 Export
             </button>

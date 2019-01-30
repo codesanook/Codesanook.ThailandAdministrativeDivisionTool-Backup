@@ -37,10 +37,10 @@ describe('index page', () => {
         await indexPage.subdistrict.includeInsertStatement.uncheck(IndexPage);
 
         await indexPage.export.click(IndexPage);
-        session.page.on('dialog', async dialog => {
-            console.log(dialog.message());
-            await dialog.dismiss();
-        });
+        // session.page.on('dialog', async dialog => {
+        //     console.log(dialog.message());
+        //     await dialog.dismiss();
+        // });
 
         await session.page.waitFor(5 * 1000);
     });

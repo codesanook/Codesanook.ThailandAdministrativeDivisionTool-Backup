@@ -31,11 +31,11 @@ const AdministrativeDivision: FunctionComponent<IProps> = (props: IProps) => {
             <h5>{props.title}</h5>
             <ul>
                 <li className='sql-create'>
-                    <input type="checkbox" checked={selectedCreateStatement} onClick={handleSelectedCreateStatement} />
+                    <input type="checkbox" checked={selectedCreateStatement} onChange={handleSelectedCreateStatement} />
                     <textarea className="editor" disabled={!selectedCreateStatement} />
                 </li>
                 <li className='sql-insert'>
-                    <input type="checkbox" checked={selectedInsertStatement} onClick={handleSelectedInsertStatement} />
+                    <input type="checkbox" checked={selectedInsertStatement} onChange={handleSelectedInsertStatement} />
                     <textarea className="editor" disabled={!selectedInsertStatement} />
                 </li>
                 <li>

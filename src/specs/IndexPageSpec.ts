@@ -35,13 +35,18 @@ describe('index page', () => {
         //not include subdistrict at all
         await indexPage.subdistrict.includeCreateTable.uncheck(IndexPage);
         await indexPage.subdistrict.includeInsertStatement.uncheck(IndexPage);
-
         await indexPage.export.click(IndexPage);
-        // session.page.on('dialog', async dialog => {
-        //     console.log(dialog.message());
-        //     await dialog.dismiss();
-        // });
 
+        await indexPage.waiForExportModalShowed();
+        let exportModal = await indexPage.exportModal;
+        expect(exportModal).not.toBeNull();
+
+        let isExportModalShow = await session.page.evaluate(() => {
+            let style = (document.querySelector('.export-modal') as any).style;
+            return style.display === 'block'
+        });
+
+        expect(isExportModalShow).toBe(true);
         await session.page.waitFor(5 * 1000);
     });
 });

@@ -47,6 +47,4 @@ export default abstract class Block implements IBlock {
 			return await this.session.page.$(selector);
 		}
 	}
-
-
 }

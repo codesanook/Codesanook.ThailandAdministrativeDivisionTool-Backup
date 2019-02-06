@@ -8,7 +8,6 @@ import { Modal } from 'react-bootstrap'
 const SqlExport: FunctionComponent = () => {
 
     const handleExport = () => {
-        //alert('exported');
         setShowModal(true);
     }
 
@@ -16,11 +15,15 @@ const SqlExport: FunctionComponent = () => {
         setShowModal(false);
     }
 
+    const handleOnHide =()=>{
+
+    };
+
     const [showModal, setShowModal] = useState(false);
 
     return (
         <div>
-            <Modal show={showModal} centered={true}>
+            <Modal show={showModal} centered={true} className="export-modal" onHide={handleOnHide}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>

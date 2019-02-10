@@ -14,7 +14,7 @@ const DatabaseType: React.FunctionComponent = () => {
             <h5>Select Database type that you want to export.</h5>
             <select>
                 {supportDataBaseTypes.map(databaseType => (
-                    <option value={databaseType}>{databaseType}</option>
+                    <option key={databaseType} value={databaseType}>{databaseType}</option>
                 ))}
             </select>
         </div>

@@ -1,7 +1,7 @@
-import Block from "../CodeSanook.Bumblebee.TS/src/Implementation/Block";
-import AdministrativeSection from "./AdministrativeSection";
-import IClickable from "../CodeSanook.Bumblebee.TS/src/Interfaces/IClickable";
-import Clickable from "../CodeSanook.Bumblebee.TS/src/Implementation/Clickable";
+import Block from "codesanook-bumblebee-ts/dist/implementations/Block";
+import IClickable from "codesanook-bumblebee-ts/dist/interfaces/IClickable";
+import Clickable from "codesanook-bumblebee-ts/dist/implementations/Clickable";
+import AdministrativeSection from "./AdministrativeSection"
 
 export default class IndexPage extends Block {
 

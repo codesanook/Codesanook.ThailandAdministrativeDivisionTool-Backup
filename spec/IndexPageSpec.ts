@@ -1,5 +1,5 @@
-import Session from '../CodeSanook.Bumblebee.TS/src/Setup/Session';
-import IndexPage from '../page-objects/IndexPage';
+import IndexPage from './page-objects/IndexPage';
+import Session from 'codesanook-bumblebee-ts/dist/setup/Session';
 
 describe('index page', () => {
     let session: Session;
@@ -32,7 +32,7 @@ describe('index page', () => {
         await indexPage.district.includeInsertStatement.check(IndexPage);
         await indexPage.district.insertStatement.enterText(IndexPage, 'insert into district');
 
-        //not include subdistrict at all
+        // not include subdistrict at all
         await indexPage.subdistrict.includeCreateTable.uncheck(IndexPage);
         await indexPage.subdistrict.includeInsertStatement.uncheck(IndexPage);
 

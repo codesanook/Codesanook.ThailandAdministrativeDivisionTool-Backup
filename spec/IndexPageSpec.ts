@@ -38,11 +38,11 @@ describe('index page', () => {
         await indexPage.export.click(IndexPage);
 
         await indexPage.waiForExportModalShowed();
-        let exportModal = await indexPage.exportModal;
+        const exportModal = await indexPage.exportModal;
         expect(exportModal).not.toBeNull();
 
-        let isExportModalShow = await session.page.evaluate(() => {
-            let style = (document.querySelector('.export-modal') as any).style;
+        const isExportModalShow = await session.page.evaluate(() => {
+            const style = (document.querySelector('.export-modal') as any).style;
             return style.display === 'block'
         });
 

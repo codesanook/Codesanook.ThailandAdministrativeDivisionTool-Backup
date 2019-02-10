@@ -1,10 +1,7 @@
-import Block from "codesanook-bumblebee-ts/dist/implementations/Block";
-import IClickable from "codesanook-bumblebee-ts/dist/interfaces/IClickable";
-import Clickable from "codesanook-bumblebee-ts/dist/implementations/Clickable";
+import { IBlock, Block, IClickable, Clickable } from "codesanook-bumblebee-ts";
 import AdministrativeSection from "./AdministrativeSection"
 import ExportModal from './ExportModal';
 import { JSHandle } from "puppeteer";
-import IBlock from "codesanook-bumblebee-ts/dist/Interfaces/IBlock";
 
 export default class IndexPage extends Block {
 

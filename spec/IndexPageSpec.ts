@@ -1,8 +1,8 @@
 import IndexPage from './page-objects/IndexPage';
-import Session from 'codesanook-bumblebee-ts/dist/setup/Session';
+import { Session } from 'codesanook-bumblebee-ts';
 
 describe('index page', () => {
-    let session: Session;
+    let session: Session
 
     beforeAll((done) => {
         jest.setTimeout(60000);
@@ -47,6 +47,6 @@ describe('index page', () => {
         });
 
         expect(isExportModalShow).toBe(true);
-        await session.page.waitFor(5 * 1000);
+        await session.page.waitFor(3 * 1000);
     });
 });

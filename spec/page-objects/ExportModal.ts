@@ -1,4 +1,4 @@
-import Block from "codesanook-bumblebee-ts/dist/implementations/Block";
+import { Block } from "codesanook-bumblebee-ts";
 
 export default class ExportModal extends Block {
 

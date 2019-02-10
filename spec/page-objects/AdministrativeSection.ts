@@ -1,8 +1,4 @@
-import Block from "codesanook-bumblebee-ts/dist/implementations/Block";
-import ICheckbox from "codesanook-bumblebee-ts/dist/interfaces/ICheckbox";
-import Checkbox from "codesanook-bumblebee-ts/dist/implementations/Checkbox";
-import ITextField from "codesanook-bumblebee-ts/dist/interfaces/ITextField";
-import TextField from "codesanook-bumblebee-ts/dist/implementations/TextField";
+import { Block, ICheckbox, Checkbox, ITextField, TextField } from "codesanook-bumblebee-ts";
 
 export default class AdministrativeSectionBase extends Block {
     public get includeCreateTable(): ICheckbox {

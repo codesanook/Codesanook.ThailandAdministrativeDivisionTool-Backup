@@ -32,9 +32,11 @@
     "@types/puppeteer": "^1.11.2",
     "@types/react": "16.7.18",
     "@types/react-dom": "16.0.11",
+    "codesanook-bumblebee-ts": "0.0.4",
     "jest": "^23.6.0",
     "jest-puppeteer": "^3.9.0",
     "lodash": "^4.17.11",
+    "micromatch": "^3.1.10",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
     "node-sass": "^4.11.0",
@@ -51,7 +53,7 @@
     "transform": {
       "^.+\\.ts?$": "ts-jest"
     },
-    "testRegex": "(/specs/.*)\\.ts$",
+    "testRegex": ".*spec.*Spec\\.ts$",
     "moduleFileExtensions": [
       "ts",
       "js",

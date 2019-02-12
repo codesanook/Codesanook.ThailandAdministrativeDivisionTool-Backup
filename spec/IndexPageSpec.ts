@@ -1,8 +1,8 @@
-import Session from '../CodeSanook.Bumblebee.TS/src/Setup/Session';
-import IndexPage from '../page-objects/IndexPage';
+import IndexPage from './page-objects/IndexPage';
+import { Session } from 'codesanook-bumblebee-ts';
 
 describe('index page', () => {
-    let session: Session;
+    let session: Session
 
     beforeAll((done) => {
         jest.setTimeout(60000);
@@ -32,21 +32,21 @@ describe('index page', () => {
         await indexPage.district.includeInsertStatement.check(IndexPage);
         await indexPage.district.insertStatement.enterText(IndexPage, 'insert into district');
 
-        //not include subdistrict at all
+        // not include subdistrict at all
         await indexPage.subdistrict.includeCreateTable.uncheck(IndexPage);
         await indexPage.subdistrict.includeInsertStatement.uncheck(IndexPage);
         await indexPage.export.click(IndexPage);
 
         await indexPage.waiForExportModalShowed();
-        let exportModal = await indexPage.exportModal;
+        const exportModal = await indexPage.exportModal;
         expect(exportModal).not.toBeNull();
 
-        let isExportModalShow = await session.page.evaluate(() => {
-            let style = (document.querySelector('.export-modal') as any).style;
+        const isExportModalShow = await session.page.evaluate(() => {
+            const style = (document.querySelector('.export-modal') as any).style;
             return style.display === 'block'
         });
 
         expect(isExportModalShow).toBe(true);
-        await session.page.waitFor(5 * 1000);
+        await session.page.waitFor(3 * 1000);
     });
 });

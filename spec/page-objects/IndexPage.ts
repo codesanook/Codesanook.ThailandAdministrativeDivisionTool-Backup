@@ -1,8 +1,5 @@
-import Block from "../CodeSanook.Bumblebee.TS/src/Implementation/Block";
-import AdministrativeSection from "./AdministrativeSection";
-import IClickable from "../CodeSanook.Bumblebee.TS/src/Interfaces/IClickable";
-import Clickable from "../CodeSanook.Bumblebee.TS/src/Implementation/Clickable";
-import IBlock from "../CodeSanook.Bumblebee.TS/src/Interfaces/IBlock";
+import { IBlock, Block, IClickable, Clickable } from "codesanook-bumblebee-ts";
+import AdministrativeSection from "./AdministrativeSection"
 import ExportModal from './ExportModal';
 import { JSHandle } from "puppeteer";
 

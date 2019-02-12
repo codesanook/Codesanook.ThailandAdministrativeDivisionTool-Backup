@@ -27,16 +27,16 @@ const AdministrativeDivision: FunctionComponent<IProps> = (props: IProps) => {
     };
 
     return (
-        <div className={classNames()}>
+        <div className={'division'}>
             <h5>{props.title}</h5>
-            <ul>
-                <li className='sql-create'>
+            <ul className={'division__sql-script'}>
+                <li className='sql-script'>
                     <input type="checkbox" checked={selectedCreateStatement} onChange={handleSelectedCreateStatement} />
-                    <textarea className="editor" disabled={!selectedCreateStatement} />
+                    <textarea className="sql-script__editor" disabled={!selectedCreateStatement} />
                 </li>
-                <li className='sql-insert'>
+                <li className='sql-script'>
                     <input type="checkbox" checked={selectedInsertStatement} onChange={handleSelectedInsertStatement} />
-                    <textarea className="editor" disabled={!selectedInsertStatement} />
+                    <textarea className="sql-script__editor" disabled={!selectedInsertStatement} />
                 </li>
                 <li>
                     Available column name

@@ -1,0 +1,27 @@
+@import "mixins";
+
+.division {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #ddd;
+
+    @include e('sql-export'){
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+}
+
+.sql-export {
+    margin-top: 15px;
+
+    @include e('editor'){
+        width: calc(100% - 55px);
+        padding: 10px;
+        margin-left: 10px;
+        border: solid 2px #ddd;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.9);
+        vertical-align: top;
+    }
+}

@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "./node_modules/.bin/jest"
+    "test": "./node_modules/.bin/jest",
+    "sass": "./node_modules/.bin/node-sass src/scss/style.scss public/style.css"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,6 +37,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
+    "node-sass": "^4.11.0",
     "path": "^0.12.7",
     "puppeteer": "^1.11.0",
     "ts-jest": "^23.10.5",

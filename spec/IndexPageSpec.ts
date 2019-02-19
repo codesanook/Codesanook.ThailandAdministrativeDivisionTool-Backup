@@ -23,19 +23,19 @@ describe('index page', () => {
             'http://localhost:3000'
         );
 
-        await indexPage.province.includeCreateTable.check(IndexPage);
-        await indexPage.province.createTableStatement.enterText(IndexPage, 'create table province');
-        await indexPage.province.includeInsertStatement.check(IndexPage);
-        await indexPage.province.createTableStatement.enterText(IndexPage, 'insert into province');
+        await indexPage.province.includeCreateTable.check();
+        await indexPage.province.createTableStatement.enterText('create table province');
+        await indexPage.province.includeInsertStatement.check();
+        await indexPage.province.createTableStatement.enterText('insert into province');
 
-        await indexPage.district.includeCreateTable.uncheck(IndexPage);
-        await indexPage.district.includeInsertStatement.check(IndexPage);
-        await indexPage.district.insertStatement.enterText(IndexPage, 'insert into district');
+        await indexPage.district.includeCreateTable.uncheck();
+        await indexPage.district.includeInsertStatement.check();
+        await indexPage.district.insertStatement.enterText('insert into district');
 
         // not include subdistrict at all
-        await indexPage.subdistrict.includeCreateTable.uncheck(IndexPage);
-        await indexPage.subdistrict.includeInsertStatement.uncheck(IndexPage);
-        await indexPage.export.click(IndexPage);
+        await indexPage.subdistrict.includeCreateTable.uncheck();
+        await indexPage.subdistrict.includeInsertStatement.uncheck();
+        await indexPage.export.click();
 
         await indexPage.waiForExportModalShowed();
         const exportModal = await indexPage.exportModal;

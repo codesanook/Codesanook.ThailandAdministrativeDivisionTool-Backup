@@ -1,21 +1,47 @@
 @import 'mixins';
 
+body {
+    color: #333;
+    background: rgb(245, 139, 29);
+    background: linear-gradient(45deg, rgba(245, 139, 29, 1) 0%, rgba(249, 166, 25, 1) 36%, rgba(251, 226, 4, 1) 100%);
+}
+
+#main {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#main .head {
+    padding: 20px;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#main .body {
+    padding: 30px;
+}
+
 .division {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: solid 1px #ddd;
 
-    @include e('sql-export'){
+    @include e('sql-export') {
         padding: 0;
         margin: 0;
         list-style: none;
     }
 }
 
-.sql-export {
+.sql-script {
     margin-top: 15px;
 
-    @include e('editor'){
+    @include e('editor') {
         width: calc(100% - 55px);
         padding: 10px;
         margin-left: 10px;
@@ -23,5 +49,18 @@
         border-radius: 4px;
         background-color: rgba(255, 255, 255, 0.9);
         vertical-align: top;
+    }
+}
+
+.database-type {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #ddd;
+
+    @include e('list') {
+        padding: 5px 10px;
+        border: solid 2px #ddd;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.9);
     }
 }

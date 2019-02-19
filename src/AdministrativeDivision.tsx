@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { FunctionComponent, useState } from "react"
-import "./AdministrativeDivision.css"
 
 interface IProps {
     title: string;
@@ -27,14 +26,14 @@ const AdministrativeDivision: FunctionComponent<IProps> = (props: IProps) => {
     };
 
     return (
-        <div className={'division'}>
+        <div className={ `division ${props.additionalClassNames}`}>
             <h5>{props.title}</h5>
-            <ul className={'division__sql-script'}>
-                <li className='sql-script'>
+            <ul className={'division__sql-export'}>
+                <li className='sql-script create-table'>
                     <input type="checkbox" checked={selectedCreateStatement} onChange={handleSelectedCreateStatement} />
                     <textarea className="sql-script__editor" disabled={!selectedCreateStatement} />
                 </li>
-                <li className='sql-script'>
+                <li className='sql-script insert-record'>
                     <input type="checkbox" checked={selectedInsertStatement} onChange={handleSelectedInsertStatement} />
                     <textarea className="sql-script__editor" disabled={!selectedInsertStatement} />
                 </li>

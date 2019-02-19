@@ -1,5 +1,4 @@
 import * as React from "react";
-import "./DatabaseType.css"
 
 const supportDataBaseTypes = [
     "MySQL",
@@ -12,7 +11,7 @@ const DatabaseType: React.FunctionComponent = () => {
     return (
         <div className="database-type">
             <h5>Select Database type that you want to export.</h5>
-            <select>
+            <select className="database-type__list">
                 {supportDataBaseTypes.map(databaseType => (
                     <option key={databaseType} value={databaseType}>{databaseType}</option>
                 ))}

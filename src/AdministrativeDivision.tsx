@@ -7,11 +7,11 @@ interface IProps {
 }
 
 const AdministrativeDivision: FunctionComponent<IProps> = (props: IProps) => {
+
     const [selectedCreateStatement, setSelectedCreateStatement] = useState(true);
     const [selectedInsertStatement, setSelectedInsertStatement] = useState(true);
 
     const classNames = (): string => {
-        props.additionalClassNames.push('division');
         return props.additionalClassNames.join(' ');
     }
 
@@ -26,16 +26,16 @@ const AdministrativeDivision: FunctionComponent<IProps> = (props: IProps) => {
     };
 
     return (
-        <div className={ `division ${props.additionalClassNames}`}>
+        <div className={`division ${classNames()}`}>
             <h5>{props.title}</h5>
-            <ul className={'division__sql-export'}>
-                <li className='sql-script create-table'>
+            <ul className='sql-export'>
+                <li className='sql-script create-table -active'>
                     <input type="checkbox" checked={selectedCreateStatement} onChange={handleSelectedCreateStatement} />
-                    <textarea className="sql-script__editor" disabled={!selectedCreateStatement} />
+                    <textarea className="editor" disabled={!selectedCreateStatement} />
                 </li>
                 <li className='sql-script insert-record'>
                     <input type="checkbox" checked={selectedInsertStatement} onChange={handleSelectedInsertStatement} />
-                    <textarea className="sql-script__editor" disabled={!selectedInsertStatement} />
+                    <textarea className="editor -active" disabled={!selectedInsertStatement} />
                 </li>
                 <li>
                     Available column name

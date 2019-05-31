@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
     "react": "^16.7.0-alpha.2",
     "react-bootstrap": "^1.0.0-beta.5",
@@ -39,7 +40,7 @@
     "micromatch": "^3.1.10",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "path": "^0.12.7",
     "puppeteer": "^1.11.0",
     "ts-jest": "^23.10.5",

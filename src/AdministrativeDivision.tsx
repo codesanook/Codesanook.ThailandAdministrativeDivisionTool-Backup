@@ -4,9 +4,15 @@ import { FunctionComponent, useState } from "react"
 interface IProps {
     title: string;
     additionalClassNames: string[];
+    createTableSqlStatement?: string;
+    insertRecordSqlStatement?: string;
 }
 
-const AdministrativeDivision: FunctionComponent<IProps> = (props: IProps) => {
+const AdministrativeDivision: FunctionComponent<IProps> = ({
+    createTableSqlStatement = 'CREATE TABLE ...',
+    insertRecordSqlStatement = 'INSERT INTO TABLE ...',
+    ...props
+}) => {
 
     const [selectedCreateStatement, setSelectedCreateStatement] = useState(true);
     const [selectedInsertStatement, setSelectedInsertStatement] = useState(true);
@@ -26,19 +32,25 @@ const AdministrativeDivision: FunctionComponent<IProps> = (props: IProps) => {
     };
 
     return (
-        <div className={`division ${classNames()}`}>
+        <div className={`administrative-division ${classNames()}`}>
             <h5>{props.title}</h5>
-            <ul className='sql-export'>
-                <li className='sql-script create-table -active'>
-                    <input type="checkbox" checked={selectedCreateStatement} onChange={handleSelectedCreateStatement} />
-                    <textarea className="editor" disabled={!selectedCreateStatement} />
+            <ul className='sql-script-list'>
+                <li className='sql-available-columns'> Available column name </li>
+                <li className='sql-script create-table'>
+                    <input type="checkbox"
+                        checked={selectedCreateStatement}
+                        onChange={handleSelectedCreateStatement} />
+                    <textarea className='editor'
+                        disabled={!selectedCreateStatement}
+                        value={createTableSqlStatement} />
                 </li>
                 <li className='sql-script insert-record'>
-                    <input type="checkbox" checked={selectedInsertStatement} onChange={handleSelectedInsertStatement} />
-                    <textarea className="editor -active" disabled={!selectedInsertStatement} />
-                </li>
-                <li>
-                    Available column name
+                    <input type='checkbox'
+                        checked={selectedInsertStatement}
+                        onChange={handleSelectedInsertStatement} />
+                    <textarea className='editor'
+                        disabled={!selectedInsertStatement}
+                        value={insertRecordSqlStatement} />
                 </li>
             </ul>
         </div>

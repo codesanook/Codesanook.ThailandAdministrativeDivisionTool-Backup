@@ -1,12 +1,10 @@
-@import 'mixins';
-
 body {
     color: #333;
     background: rgb(245, 139, 29);
     background: linear-gradient(45deg, rgba(245, 139, 29, 1) 0%, rgba(249, 166, 25, 1) 36%, rgba(251, 226, 4, 1) 100%);
 }
 
-#main {
+.app {
     width: 100%;
     max-width: 800px;
     margin: 20px auto;
@@ -14,7 +12,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-#main .head {
+.header {
     padding: 20px;
     border-bottom: solid 2px rgba(0, 0, 0, 0.05);
     background-color: rgba(0, 0, 0, 0.05);
@@ -22,30 +20,30 @@ body {
     font-weight: bold;
 }
 
-#main .body {
+.content-body {
     padding: 30px;
 }
 
-.division {
+.administrative-division {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: solid 1px #ddd;
 
-    .sql-export {
+    >.sql-script-list {
         padding: 0;
         margin: 0;
         list-style: none;
     }
 }
 
-.sql-script {
-    margin-top: 15px;
-
-    &.-active {
-        background-color: red;
+.sql-script-list {
+    >.sql-script {
+        margin-top: 15px;
     }
+}
 
-    .editor {
+.sql-script {
+    >.editor {
         width: calc(100% - 55px);
         padding: 10px;
         margin-left: 10px;
@@ -53,10 +51,6 @@ body {
         border-radius: 4px;
         background-color: rgba(255, 255, 255, 0.9);
         vertical-align: top;
-
-        &.-active {
-            background-color: blue;
-        }
     }
 }
 
@@ -65,7 +59,7 @@ body {
     padding-bottom: 20px;
     border-bottom: solid 1px #ddd;
 
-    @include e('list') {
+    >.list {
         padding: 5px 10px;
         border: solid 2px #ddd;
         border-radius: 4px;

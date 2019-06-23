@@ -16,12 +16,12 @@ const DatabaseTypeSelectList: React.FunctionComponent = () => {
     return (
         <div className="database-type">
             <h5>Select Database type that you want to export.</h5>
-            <select className="database-type__list" onChange={onSelectChange}>
+            <select className="list" onChange={onSelectChange}>
                 {supportDataBaseTypes.map(databaseType => (
                     <option key={databaseType} value={databaseType}>{databaseType}</option>
                 ))}
             </select>
-        </div >
+        </div>
     );
 }
 export default DatabaseTypeSelectList;

@@ -5,11 +5,11 @@ import SqlExport from "./SqlExport";
 
 const App: React.FunctionComponent = () => {
     return (
-        <div id="main">
-            <div className="head">
+        <div className='app'>
+            <div className='header'>
                 Thailand Administrative Division Export Tool
             </div>
-            <div className="body">
+            <div className='content-body'>
                 <DatabaseTypeSelectList />
                 <AdministrativeDivision title={'Province'} additionalClassNames={['province']} />
                 <AdministrativeDivision title={'District'} additionalClassNames={['district']} />

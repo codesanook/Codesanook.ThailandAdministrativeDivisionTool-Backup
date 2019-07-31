@@ -25,13 +25,13 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
         <div className='administrative-division' data-division-type={DivisionType[props.type].toLowerCase()}>
             <div className='content-header'>{props.title}</div>
             <ul className='sql-script-list'>
-                <li className='column'>
+                <li className='sql-script-list__column'>
                     Available column names: Id, Name
                 </li>
-                <li className='item'>
+                <li className='sql-script-list__item'>
                     <SqlScript placeHolder={createTableSqlStatementPlaceHolder} />
                 </li>
-                <li className='item'>
+                <li className='sql-script-list__item'>
                     <SqlScript placeHolder={insertRecordSqlStatementPlaceHolder} />
                 </li>
             </ul>
@@ -49,7 +49,7 @@ const SqlScript: React.FunctionComponent<{ placeHolder: string }> = props => {
         if (newValue) {
             setAdditionalTextEditorClasses([]);
         } else {
-            setAdditionalTextEditorClasses(['-disabled']);
+            setAdditionalTextEditorClasses(['sql-script__editor--disabled']);
         }
     };
 
@@ -58,7 +58,7 @@ const SqlScript: React.FunctionComponent<{ placeHolder: string }> = props => {
             <input type='checkbox'
                 checked={isSelected}
                 onChange={handleOnChange} />
-            <textarea className={['editor', ...additionalTextEditorClasses].join(' ')}
+            <textarea className={['sql-script__editor', ...additionalTextEditorClasses].join(' ')}
                 disabled={!isSelected}
                 defaultValue={props.placeHolder} />
         </div>

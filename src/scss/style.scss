@@ -15,7 +15,7 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
 
     // element
-    >.body {
+    &__body {
         padding: 30px;
     }
 }
@@ -27,12 +27,12 @@ body {
     font-size: 18px;
 
     // block modifier
-    &.-large {
+    &--large {
         font-size: 24px;
     }
 
     // block modifier
-    &.-underline {
+    &--underline {
         background-color: rgba(0, 0, 0, 0.05);
         border-bottom: solid 2px rgba(0, 0, 0, 0.05);
     }
@@ -45,7 +45,7 @@ body {
     border-bottom: solid 1px #ddd;
 
     // element
-    >.list {
+    &__list {
         padding: 5px 10px;
         border: solid 2px #ddd;
         border-radius: 4px;
@@ -68,12 +68,12 @@ body {
     list-style: none;
 
     //element
-    >.column {
+    &__column {
         font-size: 16px;
     }
 
     //element
-    >.item {
+    &__item {
         padding: 5px 0;
     }
 }
@@ -82,7 +82,7 @@ body {
 .sql-script {
 
     // element
-    >.editor {
+    &__editor {
         width: calc(100% - 55px);
         padding: 10px;
         margin-left: 10px;
@@ -93,12 +93,12 @@ body {
     }
 
     // element modifier
-    >.editor.-disabled {
+    &__editor--disabled {
         background-color: rgba(0, 0, 0, 0.1);
     }
 }
 
 // utility/service
-._text-center {
+.text-center {
     text-align: center;
 }

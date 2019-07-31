@@ -21,37 +21,51 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
     ...props
 }) => {
 
-    const [selectedCreateStatement, setSelectedCreateStatement] = useState(true);
-    const [selectedInsertStatement, setSelectedInsertStatement] = useState(true);
+    const defaultEditorClasses = ['editor'];
+    const [isSelectedCreateStatement, setIsSelectedCreateStatement] = useState(true);
+    const [editorCreateStatementClasses, setCreateStatementEditorClasses] = useState(defaultEditorClasses);
+
+    const [selectedInsertStatement, setIsSelectedInsertStatement] = useState(true);
+    const [editorInsertStatementClasses, setInsertStatementEditorClasses] = useState(defaultEditorClasses);
 
     const handleSelectedCreateStatement = (): void => {
-        const newValue = !selectedCreateStatement;
-        setSelectedCreateStatement(newValue)
+        const newValue = !isSelectedCreateStatement;
+        setIsSelectedCreateStatement(newValue)
+        if (newValue) {
+            setCreateStatementEditorClasses(defaultEditorClasses);
+        } else {
+            setCreateStatementEditorClasses([...defaultEditorClasses, '-disabled']);
+        }
     };
 
     const handleSelectedInsertStatement = (): void => {
         const newValue = !selectedInsertStatement;
-        setSelectedInsertStatement(newValue)
+        setIsSelectedInsertStatement(newValue)
+        if (newValue) {
+            setInsertStatementEditorClasses(defaultEditorClasses);
+        } else {
+            setInsertStatementEditorClasses([...defaultEditorClasses, '-disabled']);
+        }
     };
 
     return (
         <div className='administrative-division' data-division-type={DivisionType[props.type].toLowerCase()}>
-            <div className='header'>{props.title}</div>
+            <div className='content-header'>{props.title}</div>
             <ul className='sql-script-list'>
                 <li className='sql-available-columns'> Available column name: Id, Name</li>
                 <li className='sql-script create-table'>
                     <input type="checkbox"
-                        checked={selectedCreateStatement}
+                        checked={isSelectedCreateStatement}
                         onChange={handleSelectedCreateStatement} />
-                    <textarea className='editor'
-                        disabled={!selectedCreateStatement}
+                    <textarea className={editorCreateStatementClasses.join(' ')}
+                        disabled={!isSelectedCreateStatement}
                         defaultValue={createTableSqlStatement} />
                 </li>
                 <li className='sql-script insert-record'>
                     <input type='checkbox'
                         checked={selectedInsertStatement}
                         onChange={handleSelectedInsertStatement} />
-                    <textarea className='editor'
+                    <textarea className={editorInsertStatementClasses.join(' ')}
                         disabled={!selectedInsertStatement}
                         defaultValue={insertRecordSqlStatement} />
                 </li>

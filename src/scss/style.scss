@@ -1,9 +1,12 @@
 body {
-    background: linear-gradient(45deg, rgba(245, 139, 29, 1) 0%, rgba(249, 166, 25, 1) 36%, rgba(251, 226, 4, 1) 100%);
+    background: linear-gradient(45deg,
+            rgba(245, 139, 29, 1) 0%,
+            rgba(249, 166, 25, 1) 36%,
+            rgba(251, 226, 4, 1) 100%);
 }
 
 // block
-.app {
+.division-app {
     color: #333;
     width: 100%;
     max-width: 800px;
@@ -17,11 +20,10 @@ body {
 }
 
 // block
-.header {
+.content-header {
     font-weight: bold;
     padding: 10px 0;
     font-size: 18px;
-
 
     &.-large {
         font-size: 24px;
@@ -67,6 +69,10 @@ body {
         border-radius: 4px;
         background-color: rgba(255, 255, 255, 0.9);
         vertical-align: top;
+    }
+
+    >.editor.-disabled {
+        background-color: rgba(0, 0, 0, 0.1);
     }
 }
 

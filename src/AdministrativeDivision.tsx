@@ -36,7 +36,7 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
 
     return (
         <div className='administrative-division' data-division-type={DivisionType[props.type].toLowerCase()}>
-            <h5>{props.title}</h5>
+            <div className='header'>{props.title}</div>
             <ul className='sql-script-list'>
                 <li className='sql-available-columns'> Available column name: Id, Name</li>
                 <li className='sql-script create-table'>

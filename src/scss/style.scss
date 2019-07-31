@@ -1,29 +1,39 @@
 body {
-    color: #333;
-    background: rgb(245, 139, 29);
     background: linear-gradient(45deg, rgba(245, 139, 29, 1) 0%, rgba(249, 166, 25, 1) 36%, rgba(251, 226, 4, 1) 100%);
 }
 
+// block
 .app {
+    color: #333;
     width: 100%;
     max-width: 800px;
     margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+
+    >.body {
+        padding: 30px;
+    }
 }
 
+// block
 .header {
-    padding: 20px;
-    border-bottom: solid 2px rgba(0, 0, 0, 0.05);
-    background-color: rgba(0, 0, 0, 0.05);
-    font-size: 24px;
     font-weight: bold;
+    padding: 10px 0;
+    font-size: 18px;
+
+
+    &.-large {
+        font-size: 24px;
+    }
+
+    &.-dark {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-bottom: solid 2px rgba(0, 0, 0, 0.05);
+    }
 }
 
-.content-body {
-    padding: 30px;
-}
-
+// block
 .administrative-division {
     margin-bottom: 20px;
     padding-bottom: 20px;
@@ -36,12 +46,18 @@ body {
     }
 }
 
+._text-center {
+    text-align: center;
+}
+
+// block
 .sql-script-list {
     >.sql-script {
         margin-top: 15px;
     }
 }
 
+// block
 .sql-script {
     >.editor {
         width: calc(100% - 55px);
@@ -54,6 +70,7 @@ body {
     }
 }
 
+// block
 .database-type {
     margin-bottom: 20px;
     padding-bottom: 20px;

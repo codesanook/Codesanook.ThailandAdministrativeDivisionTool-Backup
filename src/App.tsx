@@ -6,10 +6,10 @@ import SqlScriptExport from "./SqlScriptExport";
 const App: React.FunctionComponent = () => {
     return (
         <div className='app'>
-            <div className='header'>
+            <div className='header -large -dark _text-center'>
                 Thailand Administrative Division Export Tool
             </div>
-            <div className='content-body'>
+            <div className='body'>
                 <DatabaseTypeSelectList />
                 <AdministrativeDivision title={'Province'} type={DivisionType.Province} />
                 <AdministrativeDivision title={'District'} type={DivisionType.District} />

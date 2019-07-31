@@ -14,6 +14,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.8);
 
+    // element
     >.body {
         padding: 30px;
     }
@@ -25,10 +26,12 @@ body {
     padding: 10px 0;
     font-size: 18px;
 
+    // block modifier
     &.-large {
         font-size: 24px;
     }
 
+    // block modifier
     &.-dark {
         background-color: rgba(0, 0, 0, 0.05);
         border-bottom: solid 2px rgba(0, 0, 0, 0.05);
@@ -36,31 +39,49 @@ body {
 }
 
 // block
-.administrative-division {
+.database-type {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: solid 1px #ddd;
 
-    >.sql-script-list {
-        padding: 0;
-        margin: 0;
-        list-style: none;
+    // element
+    >.list {
+        padding: 5px 10px;
+        border: solid 2px #ddd;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.9);
     }
 }
 
-._text-center {
-    text-align: center;
+
+// block
+.administrative-division {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #ddd;
 }
 
 // block
 .sql-script-list {
-    >.sql-script {
-        margin-top: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    //element
+    >.column {
+        font-size: 16px;
+    }
+
+    //element
+    >.item {
+        padding: 5px 0;
     }
 }
 
 // block
 .sql-script {
+
+    // element
     >.editor {
         width: calc(100% - 55px);
         padding: 10px;
@@ -71,21 +92,13 @@ body {
         vertical-align: top;
     }
 
+    // element modifier
     >.editor.-disabled {
         background-color: rgba(0, 0, 0, 0.1);
     }
 }
 
-// block
-.database-type {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: solid 1px #ddd;
-
-    >.list {
-        padding: 5px 10px;
-        border: solid 2px #ddd;
-        border-radius: 4px;
-        background-color: rgba(255, 255, 255, 0.9);
-    }
+// utility/service
+._text-center {
+    text-align: center;
 }

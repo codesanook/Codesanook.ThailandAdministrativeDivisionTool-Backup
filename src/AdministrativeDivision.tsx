@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from "react"
+import { useState } from 'react';
 
 export enum DivisionType {
     Province,
@@ -10,68 +10,61 @@ export enum DivisionType {
 interface IProps {
     title: string;
     type: DivisionType;
-    createTableSqlStatement?: string;
-    insertRecordSqlStatement?: string;
+    createTableSqlStatementPlaceHolder?: string;
+    insertRecordSqlStatementPlaceHolder?: string;
 }
 
 // with default prop
 const AdministrativeDivision: React.FunctionComponent<IProps> = ({
-    createTableSqlStatement = 'CREATE TABLE ...',
-    insertRecordSqlStatement = 'INSERT INTO TABLE ...',
+    createTableSqlStatementPlaceHolder = 'CREATE TABLE ...',
+    insertRecordSqlStatementPlaceHolder = 'INSERT INTO TABLE ...',
     ...props
 }) => {
-
-    const defaultEditorClasses = ['editor'];
-    const [isSelectedCreateStatement, setIsSelectedCreateStatement] = useState(true);
-    const [editorCreateStatementClasses, setCreateStatementEditorClasses] = useState(defaultEditorClasses);
-
-    const [selectedInsertStatement, setIsSelectedInsertStatement] = useState(true);
-    const [editorInsertStatementClasses, setInsertStatementEditorClasses] = useState(defaultEditorClasses);
-
-    const handleSelectedCreateStatement = (): void => {
-        const newValue = !isSelectedCreateStatement;
-        setIsSelectedCreateStatement(newValue)
-        if (newValue) {
-            setCreateStatementEditorClasses(defaultEditorClasses);
-        } else {
-            setCreateStatementEditorClasses([...defaultEditorClasses, '-disabled']);
-        }
-    };
-
-    const handleSelectedInsertStatement = (): void => {
-        const newValue = !selectedInsertStatement;
-        setIsSelectedInsertStatement(newValue)
-        if (newValue) {
-            setInsertStatementEditorClasses(defaultEditorClasses);
-        } else {
-            setInsertStatementEditorClasses([...defaultEditorClasses, '-disabled']);
-        }
-    };
 
     return (
         <div className='administrative-division' data-division-type={DivisionType[props.type].toLowerCase()}>
             <div className='content-header'>{props.title}</div>
             <ul className='sql-script-list'>
-                <li className='sql-available-columns'> Available column name: Id, Name</li>
-                <li className='sql-script create-table'>
-                    <input type="checkbox"
-                        checked={isSelectedCreateStatement}
-                        onChange={handleSelectedCreateStatement} />
-                    <textarea className={editorCreateStatementClasses.join(' ')}
-                        disabled={!isSelectedCreateStatement}
-                        defaultValue={createTableSqlStatement} />
+                <li className='column'>
+                    Available column names: Id, Name
                 </li>
-                <li className='sql-script insert-record'>
-                    <input type='checkbox'
-                        checked={selectedInsertStatement}
-                        onChange={handleSelectedInsertStatement} />
-                    <textarea className={editorInsertStatementClasses.join(' ')}
-                        disabled={!selectedInsertStatement}
-                        defaultValue={insertRecordSqlStatement} />
+                <li className='item'>
+                    <SqlScript placeHolder={createTableSqlStatementPlaceHolder} />
+                </li>
+                <li className='item'>
+                    <SqlScript placeHolder={insertRecordSqlStatementPlaceHolder} />
                 </li>
             </ul>
         </div>
     )
+};
+
+
+const SqlScript: React.FunctionComponent<{ placeHolder: string }> = props => {
+    const defaultEditorClasses = ['editor'];
+    const [isSelected, setIsSelected] = useState(true);
+    const [textEditorClasses, setTextEditorClasses] = useState(defaultEditorClasses)
+
+    const handleOnChange = (): void => {
+        const newValue = !isSelected;
+        setIsSelected(newValue)
+        if (newValue) {
+            setTextEditorClasses(defaultEditorClasses);
+        } else {
+            setTextEditorClasses([...defaultEditorClasses, '-disabled']);
+        }
+    };
+
+    return (
+        <div className='sql-script'>
+            <input type='checkbox'
+                checked={isSelected}
+                onChange={handleOnChange} />
+            <textarea className={textEditorClasses.join(' ')}
+                disabled={!isSelected}
+                defaultValue={props.placeHolder} />
+        </div>
+    );
 };
 
 export default AdministrativeDivision

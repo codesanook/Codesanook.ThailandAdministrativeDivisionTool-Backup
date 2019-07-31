@@ -5,7 +5,7 @@ const supportDataBaseTypes = [
     "SQL Server",
     "Oracle",
     "SQLite",
-    "Postgres",
+    "PostgreSQL",
 ]
 
 const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -15,7 +15,7 @@ const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
 const DatabaseTypeSelectList: React.FunctionComponent = () => {
     return (
         <div className="database-type">
-            <h5>Select Database type that you want to export.</h5>
+            <h5>Please select a database type that you want to export.</h5>
             <select className="list" onChange={onSelectChange}>
                 {supportDataBaseTypes.map(databaseType => (
                     <option key={databaseType} value={databaseType}>{databaseType}</option>

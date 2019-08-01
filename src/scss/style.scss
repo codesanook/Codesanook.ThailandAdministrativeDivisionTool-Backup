@@ -53,7 +53,6 @@ body {
     }
 }
 
-
 // block
 .administrative-division {
     margin-bottom: 20px;
@@ -62,7 +61,7 @@ body {
 }
 
 // block
-.sql-script-list {
+.sql-editor-list {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -80,10 +79,10 @@ body {
 }
 
 // block
-.sql-script {
+.sql-editor {
 
     // element
-    &__editor {
+    &__script {
         width: calc(100% - 55px);
         padding: 10px;
         margin-left: 10px;
@@ -94,7 +93,7 @@ body {
     }
 
     // element modifier
-    &__editor--disabled {
+    &__script--disabled {
         background-color: rgba(0, 0, 0, 0.1);
     }
 }

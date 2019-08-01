@@ -6,7 +6,7 @@ import SqlScriptExport from "./SqlScriptExport";
 const App: React.FunctionComponent = () => {
     return (
         <div className='division-app'>
-            <div className='content-header -large -dark _text-center'>
+            <div className='content-header -large -underline _text-center'>
                 Thailand Administrative Division Export Tool
             </div>
             <div className='body'>

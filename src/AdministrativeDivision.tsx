@@ -39,19 +39,17 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
     )
 };
 
-
 const SqlScript: React.FunctionComponent<{ placeHolder: string }> = props => {
-    const defaultEditorClasses = ['editor'];
     const [isSelected, setIsSelected] = useState(true);
-    const [textEditorClasses, setTextEditorClasses] = useState(defaultEditorClasses)
+    const [additionalTextEditorClasses, setAdditionalTextEditorClasses] = useState([]);
 
     const handleOnChange = (): void => {
         const newValue = !isSelected;
         setIsSelected(newValue)
         if (newValue) {
-            setTextEditorClasses(defaultEditorClasses);
+            setAdditionalTextEditorClasses([]);
         } else {
-            setTextEditorClasses([...defaultEditorClasses, '-disabled']);
+            setAdditionalTextEditorClasses(['-disabled']);
         }
     };
 
@@ -60,7 +58,7 @@ const SqlScript: React.FunctionComponent<{ placeHolder: string }> = props => {
             <input type='checkbox'
                 checked={isSelected}
                 onChange={handleOnChange} />
-            <textarea className={textEditorClasses.join(' ')}
+            <textarea className={['editor', ...additionalTextEditorClasses].join(' ')}
                 disabled={!isSelected}
                 defaultValue={props.placeHolder} />
         </div>

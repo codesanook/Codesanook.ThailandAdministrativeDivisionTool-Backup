@@ -24,14 +24,14 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
     return (
         <div className='administrative-division' data-division-type={DivisionType[props.type].toLowerCase()}>
             <div className='content-header'>{props.title}</div>
-            <ul className='sql-script-list'>
+            <ul className='sql-editor-list'>
                 <li className='column'>
                     Available column names: Id, Name
                 </li>
-                <li className='item'>
+                <li className='editor'>
                     <SqlScript placeHolder={createTableSqlStatementPlaceHolder} />
                 </li>
-                <li className='item'>
+                <li className='editor'>
                     <SqlScript placeHolder={insertRecordSqlStatementPlaceHolder} />
                 </li>
             </ul>
@@ -54,11 +54,11 @@ const SqlScript: React.FunctionComponent<{ placeHolder: string }> = props => {
     };
 
     return (
-        <div className='sql-script'>
+        <div className='sql-editor'>
             <input type='checkbox'
                 checked={isSelected}
                 onChange={handleOnChange} />
-            <textarea className={['editor', ...additionalTextEditorClasses].join(' ')}
+            <textarea className={['script', ...additionalTextEditorClasses].join(' ')}
                 disabled={!isSelected}
                 defaultValue={props.placeHolder} />
         </div>

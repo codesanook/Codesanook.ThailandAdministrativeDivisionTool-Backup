@@ -62,7 +62,7 @@ body {
 }
 
 // block
-.sql-script-list {
+.sql-editor-list {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -73,16 +73,16 @@ body {
     }
 
     //element
-    >.item {
+    >.editor {
         padding: 5px 0;
     }
 }
 
 // block
-.sql-script {
+.sql-editor {
 
     // element
-    >.editor {
+    >.script {
         width: calc(100% - 55px);
         padding: 10px;
         margin-left: 10px;
@@ -93,7 +93,7 @@ body {
     }
 
     // element modifier
-    >.editor.-disabled {
+    >.script.-disabled {
         background-color: rgba(0, 0, 0, 0.1);
     }
 }

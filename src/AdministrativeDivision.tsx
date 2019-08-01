@@ -24,8 +24,9 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
     return (
         <div className='administrative-division' data-division-type={DivisionType[props.type].toLowerCase()}>
             <div className='content-header'>{props.title}</div>
+
             <ul className='sql-script-list'>
-                <li className='sql-script-list__column'>
+                <li className='sql-script-list__item sql-script-list__item--column'>
                     Available column names: Id, Name
                 </li>
                 <li className='sql-script-list__item'>
@@ -35,6 +36,7 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
                     <SqlScript placeHolder={insertRecordSqlStatementPlaceHolder} />
                 </li>
             </ul>
+
         </div>
     )
 };

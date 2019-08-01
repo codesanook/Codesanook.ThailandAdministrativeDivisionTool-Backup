@@ -14,9 +14,9 @@ const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
 
 const DatabaseTypeSelectList: React.FunctionComponent = () => {
     return (
-        <div className="database-type">
+        <div className='database-type'>
             <h5>Please select a database type that you want to export.</h5>
-            <select className="database-type__list" onChange={onSelectChange}>
+            <select className='database-type__list' onChange={onSelectChange}>
                 {supportDataBaseTypes.map(databaseType => (
                     <option key={databaseType} value={databaseType}>{databaseType}</option>
                 ))}

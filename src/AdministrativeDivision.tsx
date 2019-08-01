@@ -27,13 +27,13 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
             <div className='content-header'>{props.title}</div>
 
             <ul className='sql-editor-list'>
-                <li className='sql-editor-list__item sql-script-list__item--column'>
+                <li className='sql-editor-list__editor sql-script-list__editor--column'>
                     Available column names: Id, Name
                 </li>
-                <li className='sql-editor-list__item'>
+                <li className='sql-editor-list__editor'>
                     <SqlEditor placeHolder={createTableSqlStatementPlaceHolder} />
                 </li>
-                <li className='sql-editor-list__item'>
+                <li className='sql-editor-list__editor'>
                     <SqlEditor placeHolder={insertRecordSqlStatementPlaceHolder} />
                 </li>
             </ul>

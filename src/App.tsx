@@ -1,10 +1,10 @@
-import * as React from "react";
-import AdministrativeDivision, { DivisionType } from "./AdministrativeDivision";
-import DatabaseTypeSelectList from "./DatabaseTypeSelectList";
-import SqlScriptExport from "./SqlScriptExport";
+import * as React from 'react'
+import AdministrativeDivision, { DivisionType } from './AdministrativeDivision'
+import DatabaseTypeSelectList from './DatabaseTypeSelectList'
+import SqlScriptExport from './SqlScriptExport'
 
 const App: React.FunctionComponent = () => {
-    return (
+  return (
         <div className='division-app'>
             <div className='content-header -large -underline _text-center'>
                 Thailand Administrative Division Export Tool
@@ -17,7 +17,7 @@ const App: React.FunctionComponent = () => {
                 <SqlScriptExport />
             </div>
         </div>
-    )
-};
+  )
+}
 
 export default App

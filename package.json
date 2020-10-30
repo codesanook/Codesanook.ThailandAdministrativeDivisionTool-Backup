@@ -14,10 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "./node_modules/.bin/jest",
-    "sass": "./node_modules/.bin/node-sass src/scss/style.scss public/style.css"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "sass": "./node_modules/.bin/node-sass src/scss/style.scss public/style.css",
+    "lint": "eslint --fix src/**/*.ts src/**/*.tsx"
   },
   "browserslist": [
     ">0.2%",
@@ -35,7 +33,14 @@
     "@types/puppeteer": "^1.11.2",
     "@types/react": "16.7.18",
     "@types/react-dom": "16.0.11",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
     "codesanook-bumblebee-ts": "0.0.8",
+    "eslint-config-standard": "^16.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
     "jest-puppeteer": "^3.9.0",
     "lodash": "^4.17.11",
     "micromatch": "^3.1.10",
@@ -44,9 +49,6 @@
     "path": "^0.12.7",
     "puppeteer": "^1.11.0",
     "ts-jest": "^23.10.5",
-    "tslint": "^5.12.1",
-    "tslint-config-prettier": "^1.17.0",
-    "tslint-react": "^3.6.0",
     "typescript": "3.2.2"
   },
   "jest": {

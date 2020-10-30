@@ -1,5 +1,4 @@
-import * as React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react'
 
 export enum DivisionType {
     Province,
@@ -14,14 +13,39 @@ interface IProps {
     insertRecordSqlStatementPlaceHolder?: string;
 }
 
+const SqlScript: React.FunctionComponent<{ placeHolder: string }> = ({ placeHolder }) => {
+  const [isSelected, setIsSelected] = useState(true)
+  const [additionalTextEditorClasses, setAdditionalTextEditorClasses] = useState([])
+
+  const handleOnChange = (): void => {
+    const newValue = !isSelected
+    setIsSelected(newValue)
+    if (newValue) {
+      setAdditionalTextEditorClasses([])
+    } else {
+      setAdditionalTextEditorClasses(['-disabled'])
+    }
+  }
+
+  return (
+        <div className='sql-editor'>
+            <input type='checkbox'
+                checked={isSelected}
+                onChange={handleOnChange} />
+            <textarea className={['script', ...additionalTextEditorClasses].join(' ')}
+                disabled={!isSelected}
+                defaultValue={placeHolder} />
+        </div>
+  )
+}
+
 // with default prop
 const AdministrativeDivision: React.FunctionComponent<IProps> = ({
-    createTableSqlStatementPlaceHolder = 'CREATE TABLE ...',
-    insertRecordSqlStatementPlaceHolder = 'INSERT INTO TABLE ...',
-    ...props
+  createTableSqlStatementPlaceHolder = 'CREATE TABLE ...',
+  insertRecordSqlStatementPlaceHolder = 'INSERT INTO TABLE ...',
+  ...props
 }) => {
-
-    return (
+  return (
         <div className='administrative-division' data-division-type={DivisionType[props.type].toLowerCase()}>
             <div className='content-header'>{props.title}</div>
             <ul className='sql-editor-list'>
@@ -36,33 +60,7 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
                 </li>
             </ul>
         </div>
-    )
-};
-
-const SqlScript: React.FunctionComponent<{ placeHolder: string }> = props => {
-    const [isSelected, setIsSelected] = useState(true);
-    const [additionalTextEditorClasses, setAdditionalTextEditorClasses] = useState([]);
-
-    const handleOnChange = (): void => {
-        const newValue = !isSelected;
-        setIsSelected(newValue)
-        if (newValue) {
-            setAdditionalTextEditorClasses([]);
-        } else {
-            setAdditionalTextEditorClasses(['-disabled']);
-        }
-    };
-
-    return (
-        <div className='sql-editor'>
-            <input type='checkbox'
-                checked={isSelected}
-                onChange={handleOnChange} />
-            <textarea className={['script', ...additionalTextEditorClasses].join(' ')}
-                disabled={!isSelected}
-                defaultValue={props.placeHolder} />
-        </div>
-    );
-};
+  )
+}
 
 export default AdministrativeDivision

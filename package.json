@@ -13,8 +13,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "./node_modules/.bin/jest",
-    "sass": "./node_modules/.bin/node-sass src/scss/style.scss public/style.css",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "sass": "node-sass src/scss/style.scss public/style.css",
     "lint": "eslint --fix src/**/*.ts src/**/*.tsx"
   },
   "browserslist": [

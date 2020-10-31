@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 
 const supportDataBaseTypes = [
   'MySQL',
@@ -6,11 +6,11 @@ const supportDataBaseTypes = [
   'Oracle',
   'SQLite',
   'PostgreSQL'
-]
+];
 
 const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
-  console.log(e.currentTarget.value)
-}
+  console.log(e.currentTarget.value);
+};
 
 const DatabaseTypeSelectList: React.FunctionComponent = () => {
   return (
@@ -22,6 +22,6 @@ const DatabaseTypeSelectList: React.FunctionComponent = () => {
                 ))}
             </select>
         </div>
-  )
-}
-export default DatabaseTypeSelectList
+  );
+};
+export default DatabaseTypeSelectList;

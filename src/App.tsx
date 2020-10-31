@@ -1,7 +1,7 @@
-import * as React from 'react'
-import AdministrativeDivision, { DivisionType } from './AdministrativeDivision'
-import DatabaseTypeSelectList from './DatabaseTypeSelectList'
-import SqlScriptExport from './SqlScriptExport'
+import * as React from 'react';
+import AdministrativeDivision, { DivisionType } from './AdministrativeDivision';
+import DatabaseTypeSelectList from './DatabaseTypeSelectList';
+import SqlScriptExport from './SqlScriptExport';
 
 const App: React.FunctionComponent = () => {
   return (
@@ -17,7 +17,7 @@ const App: React.FunctionComponent = () => {
                 <SqlScriptExport />
             </div>
         </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

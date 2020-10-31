@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export enum DivisionType {
     Province,
@@ -14,18 +14,18 @@ interface IProps {
 }
 
 const SqlScript: React.FunctionComponent<{ placeHolder: string }> = ({ placeHolder }) => {
-  const [isSelected, setIsSelected] = useState(true)
-  const [additionalTextEditorClasses, setAdditionalTextEditorClasses] = useState([])
+  const [isSelected, setIsSelected] = useState(true);
+  const [additionalTextEditorClasses, setAdditionalTextEditorClasses] = useState([]);
 
   const handleOnChange = (): void => {
-    const newValue = !isSelected
-    setIsSelected(newValue)
+    const newValue = !isSelected;
+    setIsSelected(newValue);
     if (newValue) {
-      setAdditionalTextEditorClasses([])
+      setAdditionalTextEditorClasses([]);
     } else {
-      setAdditionalTextEditorClasses(['-disabled'])
+      setAdditionalTextEditorClasses(['-disabled']);
     }
-  }
+  };
 
   return (
         <div className='sql-editor'>
@@ -36,8 +36,8 @@ const SqlScript: React.FunctionComponent<{ placeHolder: string }> = ({ placeHold
                 disabled={!isSelected}
                 defaultValue={placeHolder} />
         </div>
-  )
-}
+  );
+};
 
 // with default prop
 const AdministrativeDivision: React.FunctionComponent<IProps> = ({
@@ -60,7 +60,7 @@ const AdministrativeDivision: React.FunctionComponent<IProps> = ({
                 </li>
             </ul>
         </div>
-  )
-}
+  );
+};
 
-export default AdministrativeDivision
+export default AdministrativeDivision;

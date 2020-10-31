@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import React, { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 
 const SqlScriptExport: React.FC = () => {
-  const [showModal, setShowModal] = useState(false)
-  const handleExport = () => setShowModal(true)
-  const handleModalOKClick = () => setShowModal(false)
+  const [showModal, setShowModal] = useState(false);
+  const handleExport = () => setShowModal(true);
+  const handleModalOKClick = () => setShowModal(false);
 
   return (
         <div className="sql-export">
@@ -20,6 +20,6 @@ const SqlScriptExport: React.FC = () => {
             {/* Use of React Bootstrap https://github.com/react-bootstrap/react-bootstrap */}
             <Button variant="primary" onClick={handleExport}>Export SQL Script</Button>
         </div>
-  )
-}
-export default SqlScriptExport
+  );
+};
+export default SqlScriptExport;
